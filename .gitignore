@@ -1,0 +1,36 @@
+# Python cache & bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Testing / coverage cache
+.pytest_cache/
+.pytest_cache/*
+.coverage
+htmlcov/
+coverage.xml
+*.cover
+
+# Dependency & environment folders
+venv/
+.env/
+ENV/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# IDE / editor settings (opcionalno ali čisto)
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Logs (ako si radio file logging lokalno)
+*.log
+logs/
+
+# Build / dist (ako budeš pakovao projekat nekad)
+build/
+dist/
+*.egg-info/
