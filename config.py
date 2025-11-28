@@ -8,12 +8,12 @@ from enum import Enum
 
 
 class DatabaseConfig(Enum):
-    """Holds the database file name."""
+    """Database-level configuration settings."""
     DB_NAME = "warships.db"
 
 
 class TableSizes(Enum):
-    """Defines how many records each table should contain."""
+    """Required number of records per entity type."""
     SHIPS = 200
     WEAPONS = 20
     HULLS = 5
