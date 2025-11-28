@@ -1,9 +1,12 @@
 # Wargaming Home Task — Automation QA Engineer
 
 ## Overview
+This repository contains a Python-based solution for Wargaming's Home Task for the Automation QA Engineer role.
+The project includes database creation, randomized data generation, and a full automated validation suite using `pytest`.
 
-This repository contains the Home Task solution for the Automation QA Engineer position at Wargaming.
-Implemented in **Python 3.8**, fully **PEP8-compliant**, using **pytest** for automated testing.
+All code is compatible with **Python 3.8+** and follows a clean, readable structure.
+
+---
 
 ## Project Structure
 
@@ -14,17 +17,39 @@ conftest.py
 test_warships_full_suite.py
 requirements.txt
 
-## Tasks Covered
+## Tasks Implemented
 
-- **Task 1:** Database creation (SQLite tables: ships, weapons, hulls, engines)
-- **Task 2:** Randomized data population (200 ships, 20 weapons, 5 hulls, 6 engines)
-- **Task 3:** Session-scoped fixture for randomized database
-- **Task 4:** Automated pytest suite comparing original and randomized data (600 tests)
+### **Task 1 — Database schema creation**
+SQLite database with four tables:
+- `weapons`
+- `hulls`
+- `engines`
+- `ships` (with FK references)
+
+### **Task 2 — Data population**
+- Random generation of component attributes
+- 200 ships linked to random weapons, hulls, and engines
+
+### **Task 3 — Randomized copy**
+Session-scoped fixture creates a randomized DB copy inside a temporary directory using pytest.
+
+### **Task 4 — Automated validation tests**
+A parametrized pytest suite verifying for all 200 ships:
+1. Component attributes match the original
+2. FK references were not reassigned
+(600+ checks based on total combinations)
+
 
 ## How to Run
 
+### Generate the database:
+
 ```bash
 python cli.py
+```
+
+### Run the full validation suite:
+```bash
 pytest -v
 ```
 
@@ -35,4 +60,4 @@ pytest>=7.0
 ## Author
 
 Mirko Milanovic
-Senior Automation QA Engineer
+Automation QA Engineer
